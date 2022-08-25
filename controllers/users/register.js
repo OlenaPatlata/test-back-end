@@ -15,7 +15,7 @@ const register = async (req, res) => {
   const verificationToken = v4();
 
   const hashPassword = await bcrypt.hash(password, 10);
-  const result = await User.create({ ...req.body, password: hashPassword, verificationToken });
+  await User.create({ ...req.body, password: hashPassword, verificationToken });
   const mail = {
     to: email,
     subject: 'Подтверждение email',

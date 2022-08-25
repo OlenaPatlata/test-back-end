@@ -15,7 +15,7 @@ const registerUser = Joi.object({
   password: Joi.string().min(6).required(),
   token: Joi.string().default('')
 });
-const verifyEmailSchema= Joi.object({
+const checkEmailSchema= Joi.object({
     email: Joi.string().required().pattern(emailRegexp)
 });
 const loginUser = Joi.object({
@@ -25,7 +25,7 @@ const loginUser = Joi.object({
 const schemas = {
   checkAgeUser,
   registerUser,
-  verifyEmailSchema,
+  checkEmailSchema,
   loginUser
 };
 const userSchema = Schema({
