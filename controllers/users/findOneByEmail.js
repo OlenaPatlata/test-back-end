@@ -3,7 +3,7 @@ const { createError } = require('../../helpers');
 
 const findOneByEmail = async (req, res) => {
   const { email } = req.body;
-  const result = await User.findOne({email}, "-createdAt -updatedAt -password -token -verify -verificationToken -age");
+  const result = await User.find({email}, "-createdAt -updatedAt -password -token -verify -verificationToken -age");
   if (!result) {
     throw createError(404, `Contact with email: ${email} didn't find`)
   };
