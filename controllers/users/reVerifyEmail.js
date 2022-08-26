@@ -11,7 +11,7 @@ const reVerifyEmail = async (req, res) => {
   };
   const { verificationToken, verify } = user;
   if (verify) {
-    throw createError(400, "Verification has already been passed of user");
+    throw createError(400, "Verification has already been passed");
   };
 
   const mail = {
