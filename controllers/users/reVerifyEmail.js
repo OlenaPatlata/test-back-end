@@ -13,6 +13,7 @@ const reVerifyEmail = async (req, res) => {
   if (verify) {
     throw createError(400, "Verification has already been passed");
   };
+
   const mail = {
     to: email,
     subject: 'Подтверждение email',
