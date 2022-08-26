@@ -5,7 +5,7 @@ const { ctrlWrapper } = require('../../helpers');
 const { schemas } = require('../../models/user');
 const {  validation, authentication } = require('../../middlewares');
 
-router.get('/', validation(schemas.checkAgeUser), ctrlWrapper(ctrl.checkAge));
+router.get('/age', validation(schemas.checkAgeUser), ctrlWrapper(ctrl.checkAge));
 
 router.post('/register', validation(schemas.registerUser), ctrlWrapper(ctrl.register));
 
